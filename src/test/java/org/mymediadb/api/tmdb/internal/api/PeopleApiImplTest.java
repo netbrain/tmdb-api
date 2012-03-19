@@ -25,7 +25,7 @@ public class PeopleApiImplTest {
 
     @Test
     public void testSearch() {
-        List person = peopleApi.search("Brad Pitt");
+        List person = peopleApi.search("Pitt");
         assertNotNull(person);
         assertTrue(person.size() > 0);
     }

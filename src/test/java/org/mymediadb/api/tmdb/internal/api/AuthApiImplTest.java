@@ -24,6 +24,7 @@ public class AuthApiImplTest {
     }
 
     @Test
+    @Ignore("getToken is no longer valid implementation as tmdb has switched authentication systems.")
     public void testGetToken() {
         String token = authApi.getToken();
         assertNotNull(token);
