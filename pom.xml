@@ -14,7 +14,8 @@
   ~     along with this program.  If not, see <http://www.gnu.org/licenses />.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
 
@@ -70,6 +71,7 @@
                     <source>1.5</source>
                     <target>1.5</target>
                 </configuration>
+                <version>2.3.2</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -79,17 +81,17 @@
         </plugins>
     </build>
 
-   <distributionManagement>
-      <repository>
-        <id>mmdb-releases</id>
-        <name>mmdb releases repository</name>
-        <url>http://test.mymediadb.org/nexus/content/repositories/releases</url>
-      </repository>
-      <snapshotRepository>
-        <id>mmdb-snapshots</id>
-        <name>mmdb snapshots repository</name>
-        <url>http://test.mymediadb.org/nexus/content/repositories/snapshots</url>
-      </snapshotRepository>
+    <distributionManagement>
+        <repository>
+            <id>mmdb-releases</id>
+            <name>mmdb releases repository</name>
+            <url>http://test.mymediadb.org/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>mmdb-snapshots</id>
+            <name>mmdb snapshots repository</name>
+            <url>http://test.mymediadb.org/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
     </distributionManagement>
 
 </project>
