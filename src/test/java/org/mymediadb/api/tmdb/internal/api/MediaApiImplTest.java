@@ -9,6 +9,7 @@ import org.mymediadb.api.tmdb.model.Movie;
 
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertNull;
+import static org.junit.Assume.assumeNotNull;
 
 public class MediaApiImplTest {
 
@@ -19,6 +20,7 @@ public class MediaApiImplTest {
     public void setup() {
         tmdbApi = TmdbApiImpl.getInstance();
         mediaApi = tmdbApi.getMediaApi();
+        assumeNotNull(tmdbApi.getApiKey());
     }
 
     @Test

@@ -7,7 +7,9 @@ import org.mymediadb.api.tmdb.TmdbStatusException;
 import org.mymediadb.api.tmdb.api.AuthApi;
 import org.mymediadb.api.tmdb.api.TmdbApi;
 
-import static junit.framework.Assert.*;
+import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.assertTrue;
+import static org.junit.Assume.assumeNotNull;
 
 public class AuthApiImplTest {
 
@@ -15,13 +17,14 @@ public class AuthApiImplTest {
     private AuthApi authApi;
 
     @Before
-    public void setup(){
+    public void setup() {
         tmdbApi = TmdbApiImpl.getInstance();
         authApi = tmdbApi.getAuthApi();
+        assumeNotNull(tmdbApi.getApiKey());
     }
 
     @Test
-    public void testGetToken(){
+    public void testGetToken() {
         String token = authApi.getToken();
         assertNotNull(token);
         assertTrue(token.length() > 0);
@@ -29,15 +32,15 @@ public class AuthApiImplTest {
 
     @Test
     @Ignore("No way to automatically get correct token value")
-    public void testGetSession(){
+    public void testGetSession() {
         String secretToken = System.getProperty("test.tmdb.token");
         AuthApi.Session session = authApi.getSession(secretToken);
         assertNotNull(session);
     }
 
     @Test(expected = TmdbStatusException.class)
-    public void testGetSessionWithInvalidToken(){
+    public void testGetSessionWithInvalidToken() {
         String secretToken = "invalidTestToken";
-        AuthApi.Session session = authApi.getSession(secretToken);
+        authApi.getSession(secretToken);
     }
 }
